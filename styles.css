@@ -1,0 +1,213 @@
+/* إعادة الضبط والتنسيقات الأساسية */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* تضمين الحشو والحدود في أبعاد العنصر */
+  font-family: "Hanken Grotesk", sans-serif; /* خط التصميم الأساسي */
+}
+
+@font-face {
+  font-family: Hanken Grotesk;
+  src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+/* use variables */
+:root {
+  /* colors */
+  /* ### Primary */
+  --Light-red: hsl(0, 100%, 67%);
+  --Orangey-yellow: hsl(39, 100%, 56%);
+  --Green-teal: hsl(166, 100%, 37%);
+  --Cobalt-blue: hsl(234, 85%, 45%);
+
+  /* ## Gradients >> BG*/
+
+  --Light-slate-blue: hsl(252, 100%, 67%);
+  --Light-royal-blue: hsl(241, 81%, 54%);
+  /* >> circle */
+  --Violet-blue: hsla(256, 72%, 46%, 1);
+  --Persian-blue: hsla(241, 72%, 46%, 0);
+
+  /* ### Neutral */
+
+  --White: hsl(0, 0%, 100%);
+  --Pale-blue: hsl(221, 100%, 96%);
+  --Light-lavender: hsl(241, 100%, 89%);
+  --Dark-gray-blue: hsl(224, 30%, 27%);
+  /* Typography */
+  --paragraph-font-size: 18px;
+  --font-family: "Hanken Grotesk"; /*500,700,800*/
+  --font-medium: 500;
+  --font-semi-bold: 700;
+  --font-bold: 800;
+}
+
+body {
+  min-height: 100vh; /* الحد الأدنى لارتفاع الصفحة */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ecf2ff; /* لون خلفية الصفحة */
+}
+
+/* الحاوية الرئيسية */
+.container {
+  display: flex; /* استخدام Flexbox للتخطيط */
+  max-width: 736px; /* أقصى عرض للحاوية */
+  background: white;
+  border-radius: 32px; /* زوايا مدورة */
+  box-shadow: 0 30px 60px rgba(61, 108, 236, 0.15); /* ظل ناعم */
+}
+
+/* قسم النتائج */
+.result-section {
+  flex: 1; /* توزيع المساحة بالتساوي */
+  background: linear-gradient(
+    180deg,
+    #7755ff 0%,
+    #6943ff 0.01%,
+    #2f2ce9 100%
+  ); /* تدرج لوني */
+  /* [ ]  >> br from 4 sides */
+  border-radius: 32px;
+  padding: 38px 54px; /* حشو داخلي */
+  text-align: center;
+  color: white;
+}
+
+/* عنوان قسم النتائج */
+.result-title {
+  font-size: 24px;
+  margin-bottom: 35px; /* هامش سفلي */
+}
+
+/* دائرة النتيجة */
+.score-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* شكل دائري */
+  background: linear-gradient(180deg, #4d21c9 0%, rgba(37, 33, 201, 0) 100%);
+  margin: 0 auto 28px; /* توسيط الدائرة */
+  /* [ ] text inside circle  */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* توسيط المحتوى رأسيًا */
+}
+
+/* النتيجة الرئيسية */
+.main-score {
+  font-size: 72px;
+  font-weight: 800; /* سمك الخط */
+}
+
+/* النسبة الكلية */
+.total-score {
+  color: rgba(255, 255, 255, 0.5); /* لون شفاف */
+}
+
+/* قسم الملخص */
+.summary-section {
+  flex: 1; /* توزيع المساحة بالتساوي */
+  padding: 38px 40px; /* حشو داخلي */
+}
+
+/* عنوان الملخص */
+.summary-title {
+  font-size: 24px;
+  margin-bottom: 28px;
+  color: #303b59; /* لون النص */
+}
+
+/* COMMENT: flex kingdom */
+/* [ ] between category-name & score  */
+/* [ ] inside category-name to saperate numbers  */
+
+/* فئة الإحصائية */
+.category {
+  display: flex;
+  justify-content: space-between; /* توزيع العناصر */
+  padding: 17px;
+  margin-bottom: 16px;
+  border-radius: 12px; /* زوايا مدورة */
+}
+
+/* اسم الفئة */
+.category-name {
+  display: flex;
+  align-items: center; /* توسيط رأسي */
+  gap: 12px; /* مسافة بين العناصر */
+}
+
+/* النتيجة */
+.score {
+  color: #303b59;
+  font-weight: 700; /* سمك الخط */
+}
+
+/* النسبة في النتيجة */
+.score span {
+  opacity: 0.5; /* شفافية */
+}
+
+/* ألوان الفئات */
+.reaction {
+  background: rgba(255, 85, 85, 0.05);
+  color: #ff5555;
+} /* رد الفعل */
+.memory {
+  background: rgba(255, 178, 30, 0.05);
+  color: #ffb21e;
+} /* الذاكرة */
+.verbal {
+  background: rgba(0, 187, 143, 0.05);
+  color: #00bb8f;
+} /* اللفظي */
+.visual {
+  background: rgba(17, 37, 214, 0.05);
+  color: #1125d6;
+} /* البصري */
+
+/* زر الاستمرار */
+.continue-btn {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 128px; /* زوايا دائرية */
+  background: linear-gradient(180deg, #7755ff 0%, #6943ff 0.01%, #2f2ce9 100%);
+  color: white;
+  font-size: 18px;
+  margin-top: 25px;
+  cursor: pointer; /* تغيير شكل المؤشر */
+}
+
+/* تأثيرات الزر عند التمرير */
+.continue-btn:hover {
+  background: #303b59; /* تغيير اللون */
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* ترتيب عمودي على الجوال */
+    /* NOTE: remove br >> from container, but use it on result section */
+    border-radius: 0;
+    max-width: 100%;
+  }
+
+  .result-section {
+    border-radius: 0 0 32px 32px; /* زوايا مدورة للقسم السفلي */
+    padding: 24px 32px;
+  }
+
+  .score-circle {
+    width: 140px; /* تصغير الدائرة على الجوال */
+    height: 140px;
+  }
+
+  .main-score {
+    font-size: 56px; /* تصغير حجم النص */
+  }
+
+  .summary-section {
+    padding: 30px; /* تعديل الحشو */
+  }
+}
